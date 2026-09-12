@@ -26,7 +26,7 @@ module bcd_adder (
                     binary_sum[4] |
                    (binary_sum[3] &
                    (binary_sum[2] | binary_sum[1]));
--
+
     // 3. Add 6 (0110) when correction is required
 
     assign corrected_sum =
