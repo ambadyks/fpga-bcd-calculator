@@ -5,9 +5,8 @@ module bcd_to_7seg (
     output reg  [6:0] seg
 );
 
-    // EDGE Spartan-7  7-segment display
+    // EDGE Spartan-7 Common anode  7-segment display
     // Segment order: seg[6:0] = a b c d e f g
-    // Common-anodes
 
     always @(*) begin
         case (bcd)

@@ -8,16 +8,11 @@ module bcd_adder (
     output [3:0] sum_bcd,
     output       c_out
 );
-
-    // 5bit temporary result
+   // 5bit temporary result
     wire [4:0] binary_sum;
 
-    // to find if corretion is required
     wire correction;
-
-    // final o/p
     wire [4:0] corrected_sum;
-
 
     assign binary_sum = a_bcd + b_bcd + c_in;
 
@@ -27,14 +22,12 @@ module bcd_adder (
                    (binary_sum[3] &
                    (binary_sum[2] | binary_sum[1]));
 
-    // 3. Add 6 (0110) when correction is required
+    // Add 6 (0110) when correction is required
 
     assign corrected_sum =
                     binary_sum +
                     (correction ? 5'b00110 : 5'b00000);
 
-
-    //Fnal o/p assignment
 
     assign sum_bcd = corrected_sum[3:0];
 
