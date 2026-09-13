@@ -61,7 +61,7 @@ module top (
 
 
     // DISPLAY MULTIPLEXING
-    // Common-anode display: digit enable is active LOW
+    // Common anode display: digit enable is active LOW
 
     always @(*) begin
 
